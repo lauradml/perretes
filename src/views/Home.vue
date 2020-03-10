@@ -1,18 +1,34 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <ul>
+      <li v-for="(element, index) in $store.state.dogsList" :key="index">
+        <p>{{element}}</p>
+      </li>
+    </ul> -->
+
+    <DogsListItem
+    v-for="(element, index) in $store.state.dogsList" 
+    :key="index"
+    :name="element"
+    />
+
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import DogsListItem from '@/components/DogsListItem.vue';
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    HelloWorld
+    DogsListItem
+  },
+  data() {
+    return {
+      dogsList: []
+    };
+  },
+  created() {
+    this.$store.dispatch("getDogs");
   }
-}
+};
 </script>
