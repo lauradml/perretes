@@ -15,7 +15,7 @@ export default new Vuex.Store({
     },
 
     saveBreed(state, list) {
-      state.breedList = list
+      state.breedList = list.slice(0, 10)
     }
 
   },
@@ -29,8 +29,8 @@ export default new Vuex.Store({
           console.warn('I have failed');
         })
     },
-    getBreed({ commit }) {
-      axios.get(`https://dog.ceo/api/breed/akita/images`)
+    getBreed({ commit },name) {
+      axios.get(`https://dog.ceo/api/breed/${name}/images`)
         .then((response) => {
           console.log(response.data)
           commit('saveBreed', response.data.message);
@@ -41,11 +41,11 @@ export default new Vuex.Store({
   },
   modules: {
   },
-  // getters: {
-  //   filteredList(state){
-  //     return name =>
-  //     state.dogsList.filter(item => item === name)
-  //   }
-  // },
+  getters: {
+    filteredList(state){
+      return name =>
+      state.dogsList.filter(item => item === name)
+    }
+  },
 })
 
