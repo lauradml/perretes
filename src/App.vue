@@ -1,32 +1,42 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/breed">raza</router-link>
-    </div>
-    <router-view/>
+    <el-header id="nav">
+      <span class="titel">Perretes</span>
+      <router-link to="/">Lista de razas</router-link>|
+      <router-link to="/breed">Imagenes de razas</router-link>
+    </el-header>
+    <router-view />
   </div>
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 
 #nav {
-  padding: 30px;
+  padding: 20px;
+  text-align: "left";
+  background-color: #409eff;
 }
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #e2f8fc;
+  padding-right: 2rem;
+  
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #e9d6af;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.titel {
+  font-size: 1.3em;
+  color: #e2f8fc;
+  padding-right: 100px;
 }
 </style>

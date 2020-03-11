@@ -41,11 +41,6 @@ export default new Vuex.Store({
   },
   modules: {
   },
-  getters: {
-    filteredList(state){
-      return name =>
-      state.dogsList.filter(item => item === name)
-    }
-  },
+
 })
 

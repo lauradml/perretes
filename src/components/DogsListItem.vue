@@ -3,7 +3,7 @@
       :to="'/breed/' + name"
       tag="div"
       class="list-item">
-        {{name}}
+      <p class="item">🐾  {{name}}</p> 
     </router-link>
 </template>
 
@@ -15,3 +15,15 @@ export default {
   },
 };
 </script>
+<style  scoped>
+
+.item{
+  font-family: Arial, sans-serif;
+  margin-left: 10px;
+  width: 175px;
+  text-align: left;
+  text-transform: capitalize;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
